@@ -1,0 +1,19 @@
+javascript execution context
+-
+global execution context
+function execution context
+eval execution context
+
+javascipt code -> memory creation phase
+               -> execution phase
+
+
+1) gloal execution  -> this
+2) memory phase - variables declared has undefined value
+                - the function has its own defination
+3) execution phase - values are assigned to the variables 
+                   - the function when it runs it creates : new variable environment + execution thread : a box is made of both  
+                   - this box goes through the memory phase again and then execution 
+                   - after the compleetion of the box it is deleted 
+
+call stack :                  
