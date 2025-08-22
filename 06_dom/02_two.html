@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white; padding: 20px;">
+    <div class="parent">
+        <div class="day"> monday </div>
+        <div class="day"> tuesday </div>
+        <div class="day"> wednesday </div>  
+        <div class="day"> thursday </div>
+        <div class="day"> friday </div>
+    </div>
+</body>
+<script>
+    const parent= document.querySelectorAll('.parent')
+    console.log(parent) 
+    console.log(parent.children) // this will return an  HTMLCollection of the days 
+    console.log(parent[0].children.innerHTML) // this will return the innerHTML 
+
+    //parent.children will return an html collectiion of the aprent elemnts
+    for (let i = 0; i < parent.children.length; i++) {
+        cosnole.log(parent.children[i].innerHTML) // this will return the innerHTML of each child element;
+        
+    }
+    parent.children[1].style.color="orange"
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)  
+
+    const dayone= document.querySelector('.day')
+    console.log(dayone);//returns first day 
+    console.log(dayone.parentElement); // this will return the parent element of the day element
+    console.log(dayone.nextElementSibling); 
+
+    //nodelist imp thing
+    console.log("nodes: ",parent.childNodes);// this will return all the child nodes of the parent element, including text nodes and comment nodes(complex tree structure is known )
+</script>
+</html>
+
+
+
+//consoling values on the console of the web browser
