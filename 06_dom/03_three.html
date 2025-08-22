@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black; color: white; padding: 20px;">
+    
+</body>
+<script>
+    const div= document.createElement('div')
+    console.log(div);
+    div.className="main"
+    div.id= Math.random(Math.random() * 10 +1);
+    div.setAttribute('title','genertaed title')
+    div.style.backgroundColor="red"
+    div.style.padding="12px"
+    // div.innerHTML="HELLO WORLD" this is used to overwrite the content(take old-content and replace it with new content)(can be done)
+    const addtext= document.createTextNode("hello world");
+    div.appendChild(addtext); // this is used to add the content to the div
+
+    document.body.appendvChild(div); // this is used to add the div to the body
+</script>
+</html>
