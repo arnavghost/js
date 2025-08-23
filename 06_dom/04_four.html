@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Example</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <ul class="language">
+    <li>JavaScript</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    //while using this  function its not a optimized way to add elements like this cause it has to traverse from the start of the document to the end every time we call the function(whenever we add anything)
+    function addLang(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = langName;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLang("Python");
+    addLang("Java");
+
+    // Optimized way (avoids innerHTML, uses text nodes) //// more optimized way to add text(use of slight dsa)
+    function optiAddLang(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    optiAddLang("C++");
+    optiAddLang("C#");
+
+    // Edit/Replace second list item
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondlang.innerHTML="HELLO"
+    const newLi = document.createElement("li");
+    newLi.textContent = "HELLO";
+    secondLang.replaceWith(newLi);
+
+    // Edit/Replace first list item
+    const firstLang = document.querySelector(" li:first-child");
+    // document.outerHTML='<li>typecript</li>'
+    const tsLi = document.createElement("li");
+    tsLi.textContent = "TypeScript";
+    firstLang.replaceWith(tsLi);
+
+    // Remove last element
+    const lastLang = document.querySelector(".language li:last-child"); //.language optinal
+    lastLang.remove();
+  </script>
+</body>
+</html>
