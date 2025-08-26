@@ -1,0 +1,15 @@
+(default javascript behaviour)
+javascipt is 
+    synchronus- one code execution at a time 
+    single threaded - it is a slow language but it dosent feel like a slow lang
+                      cause u dont ever use js engine alone, it is mostly used with other run time environments(browser,nodejs eg)
+
+execution context-execute one line at a time    
+                  conssits of call stack and memory heap 
+
+blocking code vs non-blocking code  
+1) block the flow of program  2)does not block execution                                
+
+
+#important**********************
+setinterval settimeout clearinterval cleartimeout
