@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // A simple function that logs "Hitesh" in the console (not used in this example)
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+
+    // Function to change the text inside the <h1> tag
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    // setTimeout schedules changeText() to run after 2000ms (2 seconds)
+    const changeMe = setTimeout(changeText, 2000)
+
+    // Add click event to the "Stop" button
+    document.querySelector('#stop').addEventListener('click', function(){
+        // If user clicks "Stop" before 2 seconds, cancel the setTimeout
+        clearTimeout(changeMe)
+        console.log("STOPPED") // log message for confirmation
+    })
+</script>
+</html>
