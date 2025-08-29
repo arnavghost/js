@@ -1,15 +1,57 @@
-(default javascript behaviour)
-javascipt is 
-    synchronus- one code execution at a time 
-    single threaded - it is a slow language but it dosent feel like a slow lang
-                      cause u dont ever use js engine alone, it is mostly used with other run time environments(browser,nodejs eg)
+JavaScript Basics
 
-execution context-execute one line at a time    
-                  conssits of call stack and memory heap 
+Synchronous: Executes one line of code at a time.
 
-blocking code vs non-blocking code  
-1) block the flow of program  2)does not block execution                                
+Single-threaded: JavaScript runs on a single thread. It may seem slow, but it doesn’t feel slow because JS is usually run in environments like browsers or Node.js, which handle asynchronous tasks for it.
+
+Execution Context: Executes code line by line. It consists of:
+
+Call Stack – keeps track of function calls
+
+Memory Heap – stores objects and variables
+
+Blocking vs Non-blocking Code:
+
+Blocking code: Stops the execution of the program until it completes.
+
+Non-blocking code: Does not stop the execution; other code continues running.
+
+Important Functions
+
+setTimeout()
+
+setInterval()
+
+clearTimeout()
+
+clearInterval()
+
+Promise
+
+“When you make a request with a Promise using fetch, a 404 error still returns a resolved response (not a rejection). You only get a rejected promise if the request itself fails to reach the server (e.g., network error, no internet, or blocked by the browser).”
+
+Fetch and Microtasks
+
+fetch() operates in the Microtask Queue (highest priority).
+
+Example flow of fetch():
+
+fetch('some-api-url')
+  ↓
+Browsers/Node.js handle the API/network request
+  ↓
+Data is reserved in memory
+  ↓
+Promise’s internal slots:
+    - [[OnFulfilled]] – stores callbacks for successful resolution
+    - [[OnRejected]]  – stores callbacks for rejection
+(Note: These internal arrays are private and cannot be modified directly)
 
 
-#important**********************
-setinterval settimeout clearinterval cleartimeout
+✅ Key Points:
+
+fetch() always returns a Promise.
+
+HTTP errors like 404 do not reject the Promise; you need to check response.ok.
+
+Only network-level failures trigger a rejection and go to .catch().
