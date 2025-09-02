@@ -1,0 +1,27 @@
+javascript does n=have classes. but it is primarily a prototype based language
+and its classes are primarily syntactic sugar but behind the scene it is an 
+exisiting prototype based inheritance mechanisms
+
+#javascript and classes 
+
+##oop-collection of propertites and methods
+
+##why use oop
+
+##parts of oop
+    Object literal
+
+keyword-
+    constructor function
+    prototype 
+    classes 
+    instances(new,this)
+
+#@4 pillars
+    abstraction
+    encapsulation
+    inheritance
+    polymorphism
+
+
+

@@ -55,3 +55,38 @@ fetch() always returns a Promise.
 HTTP errors like 404 do not reject the Promise; you need to check response.ok.
 
 Only network-level failures trigger a rejection and go to .catch().
+
+
+
+#this
+In browser JavaScript, when you just type console.log(this) in the global scope, it refers to the global object, which is the window object.
+window is the global object in browsers, holding things like document, console, setTimeout, etc.
+
+in short- In the browser, this in the global scope refers to the window object (the global object).
+In Node.js, this in the global scope is an empty object {},
+
+
+ ## new 
+ 1. A brand-new empty object is created.
+ 2. The constructor function is called with 'this' bound to that new object.
+ 3. Properties and values are assigned to the object via 'this'.
+ 4. Unless the constructor explicitly returns another object, 
+   the newly created object is returned by default.
+
+
+
+#instanceof
+instanceof checks whether an object is created by (or inherits from) a specific constructor function/class.
+It returns true if the object is an instance of that constructor, otherwise false.
+
+Example:
+
+function Person(name) {
+  this.name = name;
+}
+
+const p1 = new Person("Arnav");
+
+console.log(p1 instanceof Person); // true
+console.log(p1 instanceof Object); // true
+console.log(p1 instanceof Array);  // false
